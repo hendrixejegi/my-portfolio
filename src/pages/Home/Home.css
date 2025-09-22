@@ -1,0 +1,60 @@
+nav {
+  isolation: isolate;
+  position: relative;
+
+  li:hover {
+    anchor-name: --hovered-link;
+  }
+
+  a {
+    display: block;
+    padding: 16px 20px;
+    color: var(--secondary);
+  }
+
+  a.active,
+  .my-cv:hover {
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  .my-cv {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: anchor(left);
+    right: anchor(right);
+    bottom: anchor(bottom);
+    height: 0;
+    z-index: -1;
+    background-color: var(--tertiary);
+    border-radius: 20px;
+    position-anchor: --hovered-link;
+    transition: 300ms
+      linear(
+        0,
+        0.029 1.6%,
+        0.123 3.5%,
+        0.651 10.6%,
+        0.862 14.1%,
+        1.002 17.7%,
+        1.046 19.6%,
+        1.074 21.6%,
+        1.087 23.9%,
+        1.086 26.6%,
+        1.014 38.5%,
+        0.994 46.3%,
+        1
+      );
+  }
+
+  &:has(a:hover)::before {
+    height: 100%;
+  }
+}
