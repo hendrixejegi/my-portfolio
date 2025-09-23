@@ -10,6 +10,7 @@ nav {
     display: block;
     padding: 16px 20px;
     color: var(--secondary);
+    transition: all 300ms;
   }
 
   a.active,
@@ -56,5 +57,9 @@ nav {
 
   &:has(a:hover)::before {
     height: 100%;
+  }
+
+  &.nav--tertiary-bg::before {
+    background-color: var(--white);
   }
 }
