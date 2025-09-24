@@ -10,6 +10,11 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import useObserver from "../../hooks/useObserver";
 import { cn } from "../../lib/utils";
 
+// GSAP
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 // Assets
 import { ArrowUpRight, ArrowDown } from "lucide-react";
 import codingAnimation from "../../assets/lotties/Coding.lottie";
@@ -26,6 +31,8 @@ import {
   faGit,
 } from "@fortawesome/free-brands-svg-icons";
 
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 export function Home() {
   const [activeLink, setActiveLink] = useState("#hero-section");
   const [headerBackgroundWhite, setheaderBackgroundWhite] = useState(true);
@@ -36,14 +43,14 @@ export function Home() {
     };
   }, []);
 
-  const observerCallback = useCallback((entries, cb = undefined) => {
+  const observerCallback = useCallback((entries, _, cb = undefined) => {
     const { isIntersecting } = entries[0];
 
     isIntersecting
       ? setheaderBackgroundWhite(false)
       : setheaderBackgroundWhite(true);
 
-    cb && cb(isIntersecting);
+    cb(isIntersecting);
   }, []);
 
   const useObserverArgs = { ...observerOptions, callback: observerCallback };
@@ -212,6 +219,54 @@ const AboutMe = React.memo(({ observerArgs, setLink }) => {
     }
   }, [aboutSectionObserver, setLink]);
 
+  // GSAP
+  useGSAP(
+    () => {
+      const aboutSection_GSAPTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: aboutSectionRef.current,
+          pin: true,
+          start: "top top",
+        },
+      });
+
+      aboutSection_GSAPTimeline
+        .from(".container-1 > h2", {
+          y: -10,
+          opacity: 0,
+          ease: "back",
+          duration: 0.3,
+        })
+        .from(".container-1 > p:first-of-type", {
+          y: -10,
+          opacity: 0,
+          ease: "back",
+          duration: 0.3,
+        })
+        .from(".container-1 > p:last-of-type", {
+          y: -10,
+          opacity: 0,
+          ease: "back",
+          duration: 0.3,
+        })
+        .from(".stack", { x: -10, opacity: 0, stagger: 0.3 })
+        .from(".container-2", { rotateY: 45, opacity: 0, duration: 0.3 })
+        .from(".rocket", { x: -10, y: 10, opacity: 0, duration: 0.3 })
+        .from(".container-2 > p", {
+          y: -10,
+          opacity: 0,
+          ease: "back",
+          duration: 0.3,
+        })
+        .from(".container-3 li", {
+          x: 10,
+          opacity: 0,
+          stagger: 0.3,
+        });
+    },
+    { scope: aboutSectionRef.current },
+  );
+
   return (
     <section
       ref={aboutSectionRef}
@@ -219,7 +274,7 @@ const AboutMe = React.memo(({ observerArgs, setLink }) => {
       className="full-bleed bg-tertiary h-screen pt-[90px]"
     >
       <div className="mx-auto grid h-full max-w-[1280px] grid-cols-[1fr_300px_1fr] place-content-center p-4">
-        <div className="space-y-8 p-8">
+        <div className="container-1 space-y-8 p-8">
           <h2 className="text-primary text-5xl font-semibold">About Me</h2>
           <p className="text-primary">
             My journey didn&#39;t start with code. I was studying at DELSU when
@@ -239,18 +294,18 @@ const AboutMe = React.memo(({ observerArgs, setLink }) => {
                 key={idx}
                 icon={icon[0]}
                 size="4x"
-                className="text-secondary"
+                className="stack text-secondary"
                 aria-label={icon[1]}
               />
             ))}
           </div>
         </div>
-        <div className="space-y-8 rounded-xl bg-white p-8">
+        <div className="container-2 space-y-8 rounded-xl bg-white p-8">
           <div>
             <FontAwesomeIcon
               icon={faRocket}
               size="3x"
-              className="text-primary"
+              className="rocket text-primary"
               aria-hidden="true"
             />
           </div>
@@ -267,7 +322,7 @@ const AboutMe = React.memo(({ observerArgs, setLink }) => {
             />
           </div>
         </div>
-        <div className="content-end p-6">
+        <div className="container-3 content-end p-6">
           <ul className="space-y-8">
             <li className="text-primary flex items-start gap-4">
               <FontAwesomeIcon icon={faDiamond} size="2x" aria-hidden="true" />
