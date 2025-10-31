@@ -3,6 +3,7 @@ import NavBar from "../../components/Home/NavBar";
 import HeroSection from "../../components/Home/HeroSection";
 import AboutMe from "../../components/Home/AboutMe";
 import Projects from "../../components/Home/Projects";
+import Contact from "../../components/Home/Contact";
 
 export function Home() {
   const [activeLink, setActiveLink] = useState("#hero-section");
@@ -40,6 +41,7 @@ export function Home() {
           setLink={handleActiveLinkChange}
         />
         <Projects />
+        <Contact />
       </main>
     </div>
   );

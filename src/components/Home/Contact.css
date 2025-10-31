@@ -1,0 +1,30 @@
+.input-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-container > label {
+  color: var(--tertiary);
+}
+
+.input-container input,
+.input-container textarea {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--secondary);
+  padding: 8px 16px;
+  color: var(--tertiary);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--secondary);
+}
+
+textarea {
+  resize: none;
+  field-sizing: content;
+  min-height: 8rem;
+}
