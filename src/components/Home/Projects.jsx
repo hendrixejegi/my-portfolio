@@ -2,7 +2,7 @@ import queueUp from "../../assets/images/queueup.png";
 
 const Projects = () => {
   return (
-    <section className="space-y-4 p-8">
+    <section id="project-section" className="space-y-4 p-8 py-[90px]">
       <h2 className="text-primary text-3xl font-semibold">Selected Work</h2>
       <div>
         <ul className="gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">

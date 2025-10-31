@@ -5,7 +5,7 @@ import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import "./NavBar.css";
 
 import { ArrowUpRight } from "lucide-react";
-const NavBar = ({ ref, activeLink, isWhite }) => {
+const NavBar = () => {
   const [state, setState] = useState({
     scroll: false,
     addHeaderShadow: false,
@@ -31,12 +31,12 @@ const NavBar = ({ ref, activeLink, isWhite }) => {
     [state.scroll],
   );
 
+  const hideMobileNav = () => setState((prev) => ({ ...prev, isOpen: false }));
+
   return (
     <header
-      ref={ref}
       className={cn(
         "full-bleed fixed top-0 left-0 z-50 w-screen translate-y-0 bg-white p-4 opacity-100 transition-all duration-300 ease-out starting:-translate-y-8 starting:opacity-0",
-        isWhite ? null : "bg-tertiary",
         state.addHeaderShadow ? "shadow-md" : null,
       )}
     >
@@ -65,43 +65,26 @@ const NavBar = ({ ref, activeLink, isWhite }) => {
             />
           )}
         </button>
-        <nav
-          className={cn(
-            isWhite && "nav--tertiary-bg",
-            state.isOpen && "show-nav",
-          )}
-        >
+        <nav className={cn(state.isOpen && "show-nav")}>
           <ul className="flex items-center">
             <li>
-              <a
-                className={`${activeLink === "#hero-section" ? "active" : null}`}
-                href="#hero-section"
-              >
+              <a href="#hero-section" onClick={hideMobileNav}>
                 Home
               </a>
             </li>
             <li>
-              <a
-                className={`${activeLink === "#about-section" ? "active" : null}`}
-                href="#about-section"
-              >
+              <a href="#about-section" onClick={hideMobileNav}>
                 About Me
               </a>
             </li>
             <li>
-              <a
-                className={`${activeLink === "#experience-section" ? "active" : null}`}
-                href="#experience-section"
-              >
-                Experiences
+              <a href="#project-section" onClick={hideMobileNav}>
+                Projects
               </a>
             </li>
             <li>
-              <a
-                className={`${activeLink === "#project-section" ? "active" : null}`}
-                href="#project-section"
-              >
-                Projects
+              <a href="#contact-me-section" onClick={hideMobileNav}>
+                Contact Me
               </a>
             </li>
           </ul>

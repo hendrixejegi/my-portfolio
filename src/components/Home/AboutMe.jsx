@@ -1,5 +1,3 @@
-import { useRef, useEffect } from "react";
-import useObserver from "../../hooks/useObserver";
 import myImage from "../../assets/images/47c01cb8-29e8-4875-92cd-19b473bb5e4f.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiamond, faRocket } from "@fortawesome/free-solid-svg-icons";
@@ -25,41 +23,22 @@ const iconList = [
   [faGit, "Git version control"],
 ];
 
-const AboutMe = ({ observerArgs, setLink }) => {
-  const aboutSectionRef = useRef(null);
-  const aboutSectionObserver = useObserver({
-    target: aboutSectionRef.current,
-    ...observerArgs,
-  });
-
-  useEffect(() => {
-    if (aboutSectionObserver) {
-      setLink("#about-section");
-    } else {
-      setLink("#hero-section");
-    }
-  }, [aboutSectionObserver, setLink]);
-
+const AboutMe = () => {
   return (
-    <section
-      ref={aboutSectionRef}
-      id="about-section"
-      className="full-bleed bg-tertiary min-h-screen"
-    >
+    <section id="about-section" className="full-bleed bg-tertiary min-h-screen">
       <div className="mx-auto grid h-full max-w-[1280px] grid-cols-1 place-content-center p-4 lg:grid-cols-[1fr_300px_1fr]">
         <div className="container-1 space-y-4 p-8">
           <h2 className="text-primary text-3xl font-semibold">About Me</h2>
           <p className="text-primary">
-            My journey didn&#39;t start with code. I was studying at DELSU when
-            I realized my path was leading me in a different direction. So I
-            made a tough call — I stepped away to chase something that felt more
-            like me.
+            After giving Spanish a shot and not quite hitting the mark, I
+            decided to try my hand at some other languages—this time, I went for
+            HTML, CSS, and JavaScript!
           </p>
           <p>
-            That decision led me to the world of code. I once tried learning
-            Spanish — fun experiment, but it didn&#39;t stick. HTML, CSS, and
-            JavaScript? Those clicked instantly. The first time I saw a page
-            come alive from a few lines of code, I knew I&#39;d found my thing.
+            My journey didn't start with code. I was studying at DELSU when I
+            realized my path was leading me in a different direction. So I made
+            a tough call — I stepped away to chase something that felt more like
+            me. That decision led me to the world of code
           </p>
           <div className="flex w-full flex-wrap justify-center gap-4">
             {iconList.map((icon, idx) => (
