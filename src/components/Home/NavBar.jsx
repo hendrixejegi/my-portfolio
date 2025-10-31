@@ -115,6 +115,4 @@ const NavBar = ({ ref, activeLink, isWhite }) => {
   );
 };
 
-NavBar.displayName = "NavBar";
-
 export default NavBar;

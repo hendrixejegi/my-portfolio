@@ -47,8 +47,8 @@ const AboutMe = ({ observerArgs, setLink }) => {
       className="full-bleed bg-tertiary min-h-screen"
     >
       <div className="mx-auto grid h-full max-w-[1280px] grid-cols-1 place-content-center p-4 lg:grid-cols-[1fr_300px_1fr]">
-        <div className="container-1 space-y-8 p-8">
-          <h2 className="text-primary text-5xl font-semibold">About Me</h2>
+        <div className="container-1 space-y-4 p-8">
+          <h2 className="text-primary text-3xl font-semibold">About Me</h2>
           <p className="text-primary">
             My journey didn&#39;t start with code. I was studying at DELSU when
             I realized my path was leading me in a different direction. So I
@@ -73,7 +73,7 @@ const AboutMe = ({ observerArgs, setLink }) => {
             ))}
           </div>
         </div>
-        <div className="container-2 space-y-8 rounded-xl bg-white p-8">
+        <div className="container-2 space-y-4 rounded-xl bg-white p-8">
           <div>
             <FontAwesomeIcon
               icon={faRocket}
@@ -96,7 +96,7 @@ const AboutMe = ({ observerArgs, setLink }) => {
           </div>
         </div>
         <div className="container-3 content-end p-6">
-          <ul className="space-y-8">
+          <ul className="space-y-4">
             <li className="text-primary flex items-start gap-4">
               <FontAwesomeIcon icon={faDiamond} size="2x" aria-hidden="true" />
               <span>
@@ -117,7 +117,5 @@ const AboutMe = ({ observerArgs, setLink }) => {
     </section>
   );
 };
-
-AboutMe.displayName = "AboutMe";
 
 export default AboutMe;
