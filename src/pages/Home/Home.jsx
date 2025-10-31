@@ -1,7 +1,7 @@
 import { useState, useMemo, useCallback } from "react";
 import NavBar from "../../components/Home/NavBar";
 import HeroSection from "../../components/Home/HeroSection";
-// import AboutMe from "../../components/Home/AboutMe";
+import AboutMe from "../../components/Home/AboutMe";
 
 export function Home() {
   const [activeLink, setActiveLink] = useState("#hero-section");
@@ -33,12 +33,12 @@ export function Home() {
     <div className="wrapper">
       <NavBar activeLink={activeLink} isWhite={headerBackgroundWhite} />
       <HeroSection />
-      {/* <main className="full-bleed wrapper">
+      <main className="full-bleed wrapper">
         <AboutMe
           observerArgs={useObserverArgs}
           setLink={handleActiveLinkChange}
         />
-      </main> */}
+      </main>
     </div>
   );
 }

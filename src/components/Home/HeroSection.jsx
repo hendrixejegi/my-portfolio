@@ -38,7 +38,7 @@ const HeroSection = memo(() => {
           Frontend developer
         </div>
       </div>
-      <div className="text-primary absolute bottom-4 left-12 mx-auto flex max-w-5xl animate-bounce items-center gap-2 opacity-100 transition-all delay-[1500ms] ease-in-out lg:inset-[auto_0_16px] lg:delay-[6000ms] starting:animate-none starting:opacity-0">
+      <div className="text-primary absolute right-4 bottom-4 mx-auto flex max-w-5xl animate-bounce items-center gap-2 opacity-100 transition-all delay-[1500ms] ease-in-out lg:delay-[6000ms] starting:animate-none starting:opacity-0">
         <span>Scroll down</span> <ArrowDown aria-hidden="true" />
       </div>
     </div>

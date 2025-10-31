@@ -1,6 +1,6 @@
-import { useRef, useEffect, memo, useMemo } from "react";
+import { useRef, useEffect } from "react";
 import useObserver from "../../hooks/useObserver";
-import myImage from "../assets/images/47c01cb8-29e8-4875-92cd-19b473bb5e4f.jpeg";
+import myImage from "../../assets/images/47c01cb8-29e8-4875-92cd-19b473bb5e4f.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiamond, faRocket } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -16,24 +16,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-const AboutMe = memo(({ observerArgs, setLink }) => {
+const iconList = [
+  // [Component, aria-label]
+  [faHtml5, "HTML 5"],
+  [faCss, "CSS 3"],
+  [faJs, "JavaScript"],
+  [faReact, "React"],
+  [faGit, "Git version control"],
+];
+
+const AboutMe = ({ observerArgs, setLink }) => {
   const aboutSectionRef = useRef(null);
   const aboutSectionObserver = useObserver({
     target: aboutSectionRef.current,
     ...observerArgs,
   });
-
-  const iconList = useMemo(
-    () => [
-      // [Component, aria-label]
-      [faHtml5, "HTML 5"],
-      [faCss, "CSS 3"],
-      [faJs, "JavaScript"],
-      [faReact, "React"],
-      [faGit, "Git version control"],
-    ],
-    [],
-  );
 
   useEffect(() => {
     if (aboutSectionObserver) {
@@ -43,59 +40,11 @@ const AboutMe = memo(({ observerArgs, setLink }) => {
     }
   }, [aboutSectionObserver, setLink]);
 
-  // GSAP
-  useGSAP(
-    () => {
-      const aboutSection_GSAPTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: aboutSectionRef.current,
-          pin: true,
-          start: "top top",
-        },
-      });
-
-      aboutSection_GSAPTimeline
-        .from(".container-1 > h2", {
-          y: -10,
-          opacity: 0,
-          ease: "back",
-          duration: 0.3,
-        })
-        .from(".container-1 > p:first-of-type", {
-          y: -10,
-          opacity: 0,
-          ease: "back",
-          duration: 0.3,
-        })
-        .from(".container-1 > p:last-of-type", {
-          y: -10,
-          opacity: 0,
-          ease: "back",
-          duration: 0.3,
-        })
-        .from(".stack", { x: -10, opacity: 0, stagger: 0.3 })
-        .from(".container-2", { rotateY: 45, opacity: 0, duration: 0.3 })
-        .from(".rocket", { x: -10, y: 10, opacity: 0, duration: 0.3 })
-        .from(".container-2 > p", {
-          y: -10,
-          opacity: 0,
-          ease: "back",
-          duration: 0.3,
-        })
-        .from(".container-3 li", {
-          x: 10,
-          opacity: 0,
-          stagger: 0.3,
-        });
-    },
-    { scope: aboutSectionRef.current },
-  );
-
   return (
     <section
       ref={aboutSectionRef}
       id="about-section"
-      className="full-bleed bg-tertiary h-screen pt-[90px]"
+      className="full-bleed bg-tertiary min-h-screen"
     >
       <div className="mx-auto grid h-full max-w-[1280px] grid-cols-1 place-content-center p-4 lg:grid-cols-[1fr_300px_1fr]">
         <div className="container-1 space-y-8 p-8">
@@ -112,7 +61,7 @@ const AboutMe = memo(({ observerArgs, setLink }) => {
             JavaScript? Those clicked instantly. The first time I saw a page
             come alive from a few lines of code, I knew I&#39;d found my thing.
           </p>
-          <div className="flex w-full flex-wrap justify-between">
+          <div className="flex w-full flex-wrap justify-center gap-4">
             {iconList.map((icon, idx) => (
               <FontAwesomeIcon
                 key={idx}
@@ -167,7 +116,7 @@ const AboutMe = memo(({ observerArgs, setLink }) => {
       </div>
     </section>
   );
-});
+};
 
 AboutMe.displayName = "AboutMe";
 
