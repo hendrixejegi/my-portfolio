@@ -89,7 +89,10 @@ const NavBar = () => {
             </li>
           </ul>
 
-          <a href="https://hendrixejegi.cv/" className="my-cv">
+          <a
+            href="https://drive.google.com/file/d/1muYxv4F2qDbuWacEE7LpU09TOmSsJgnX/view?usp=sharing"
+            className="my-cv"
+          >
             <span>My CV</span> <ArrowUpRight aria-hidden="true" />
           </a>
         </nav>
