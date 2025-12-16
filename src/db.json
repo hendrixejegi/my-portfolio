@@ -1,0 +1,46 @@
+{
+  "projects": [
+    {
+      "name": "QueueUp - Ticket management dashboard",
+      "image": "/queueup.png",
+      "description": "A responsive SaaS prototype modeling a complete business workflow—from a conversion-focused landing page to a secure, data-driven dashboard with full ticket management capabilities.",
+      "choices": [
+        {
+          "title": "Robust Data Integrity",
+          "description": "Implemented Zod schemas for strict form validation, ensuring error-free data submission."
+        },
+        {
+          "title": "UX/UI Design",
+          "description": "Built a clean, accessible layout with TailwindCSS, featuring toast notifications and status-based filtering."
+        },
+        {
+          "title": "Full-Stack Prototyping",
+          "description": "Leveraged AI to generate a functional backend with JWT mock authentication, allowing for a focus on production-grade frontend architecture and API consumption."
+        }
+      ],
+      "live": "https://hng-2-ticket-app.vercel.app/",
+      "github": "https://github.com/hendrixejegi/hng-2-ticket-app"
+    },
+    {
+      "name": "Multilingual Translation Interface",
+      "image": "/translate-app.png",
+      "description": "A functional language converter supporting English, French, and Spanish with bidirectional swapping logic.",
+      "choices": [
+        {
+          "title": "Performance Optimization",
+          "description": "Implemented input debouncing to manage real-time translation requests, significantly reducing API overhead and preventing rate-limiting during rapid typing."
+        },
+        {
+          "title": "Native Browser Integration",
+          "description": "Leveraged the Web Speech API for text-to-speech synthesis (accessibility) and the Clipboard API for seamless user copying."
+        },
+        {
+          "title": "Asynchronous UX",
+          "description": "Implemented dedicated loading states to maintain UI responsiveness and provide visual feedback during data fetching/translation processing."
+        }
+      ],
+      "live": "https://translate-app-ten-rust.vercel.app/",
+      "github": "https://github.com/hendrixejegi/translate-app"
+    }
+  ]
+}

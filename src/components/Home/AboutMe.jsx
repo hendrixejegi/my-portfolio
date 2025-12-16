@@ -1,7 +1,6 @@
 import myImage from "../../assets/images/47c01cb8-29e8-4875-92cd-19b473bb5e4f.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faDiamond,
   faRocket,
   faGraduationCap,
   faGlobe,
@@ -28,7 +27,7 @@ const AboutMe = () => {
   return (
     <section id="about-section" className="full-bleed bg-tertiary min-h-screen">
       <div className="mx-auto grid h-full max-w-[1280px] grid-cols-1 place-content-center p-4 lg:grid-cols-[1fr_300px_1fr]">
-        <div className="container-1 space-y-4 p-8">
+        <div className="container-1 space-y-4 p-4">
           <h2 className="text-primary text-3xl font-semibold">About Me</h2>
           <p className="text-primary">
             I tried learning Spanish, but after struggling to roll my R&apos;s,
@@ -79,7 +78,7 @@ const AboutMe = () => {
             />
           </div>
         </div>
-        <div className="container-3 content-end p-6">
+        <div className="container-3 content-end p-4">
           <ul className="space-y-4">
             <li className="text-primary flex items-start gap-4">
               <FontAwesomeIcon
@@ -88,18 +87,18 @@ const AboutMe = () => {
                 aria-hidden="true"
               />
               <p>
-                <strong>Education & Foundation AltSchool Africa Alumnus</strong>{" "}
-                Earned a Diploma in Frontend Engineering, moving from
-                self-taught foundations to professional-grade software
-                development standards.
+                <b>Education & Foundation AltSchool Africa Alumnus</b> Earned a
+                Diploma in Frontend Engineering, moving from self-taught
+                foundations to professional-grade software development
+                standards.
               </p>
             </li>
             <li className="text-primary flex items-start gap-4">
               <FontAwesomeIcon icon={faGlobe} size="2x" aria-hidden="true" />
               <p>
-                <strong>
+                <b>
                   Current Mission Frontend Developer at Calmify Technologies
-                </strong>{" "}
+                </b>{" "}
                 Building Natsu - a digital tool designed to democratize access
                 to mental wellness resources across Africa.
               </p>
@@ -107,9 +106,7 @@ const AboutMe = () => {
             <li className="text-primary flex items-start gap-4">
               <FontAwesomeIcon icon={faBolt} size="2x" aria-hidden="true" />
               <p>
-                <strong>
-                  Continuous Growth Expanding into Backend (Node.js)
-                </strong>{" "}
+                <b>Continuous Growth Expanding into Backend (Node.js)</b>{" "}
                 Actively upskilling in server-side technologies to understand
                 the full product lifecycle, from database to pixel-perfect UI.
               </p>
