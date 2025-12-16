@@ -92,6 +92,8 @@ const NavBar = () => {
           <a
             href="https://drive.google.com/file/d/1muYxv4F2qDbuWacEE7LpU09TOmSsJgnX/view?usp=sharing"
             className="my-cv"
+            target="_blank"
+            referrerPolicy="no-referrer"
           >
             <span>My CV</span> <ArrowUpRight aria-hidden="true" />
           </a>
