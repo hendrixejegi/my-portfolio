@@ -10,7 +10,7 @@ const ProjectCard = (props) => {
   const { name, image, description, choices, live, github } = props;
 
   return (
-    <li className="bg-tertiary flex flex-col gap-2 rounded-xl p-2">
+    <li className="bg-tertiary flex flex-col gap-2 rounded-xl p-2 shadow-lg">
       <img src={image} alt={name} className="rounded-md" />
       <h3 className="text-primary font-semibold">{name}</h3>
       <p className="text-primary/80 grow">{description}</p>
@@ -70,7 +70,7 @@ const Projects = () => {
     <section id="project-section" className="space-y-4 p-4 py-[90px] md:p-8">
       <h2 className="text-primary text-3xl font-semibold">Selected Work</h2>
       <div>
-        <ul className="gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
+        <ul className="gap-4 space-y-4 md:grid md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => {
             return <ProjectCard key={project.name} {...project} />;
           })}

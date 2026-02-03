@@ -41,6 +41,48 @@
       ],
       "live": "https://translate-app-ten-rust.vercel.app/",
       "github": "https://github.com/hendrixejegi/translate-app"
+    },
+    {
+      "name": "Responsive Bank Landing Page",
+      "image": "/Macbook-Air-bank-lp-eight.vercel.app.webp",
+      "description": "A responsive banking landing page built with React and Tailwind CSS, focused on adaptive navigation behavior, clean component architecture, and mobile-first responsiveness.",
+      "choices": [
+        {
+          "title": "Component-Driven Architecture",
+          "description": "Structured the UI into reusable, isolated React components (Navbar, Hero, Features, CTA) to improve readability, scalability, and long-term maintainability."
+        },
+        {
+          "title": "Custom Responsive Logic",
+          "description": "Abstracted viewport and scroll behavior into custom hooks (useIsMobile and useScrolled) to manage navbar responsiveness and sticky behavior without cluttering component logic."
+        },
+        {
+          "title": "Mobile-First Responsiveness",
+          "description": "Used Tailwind’s utility-first approach to design mobile-first layouts, progressively enhancing the UI for larger screens while maintaining consistent spacing and hierarchy."
+        }
+      ],
+      "live": "https://bank-lp-eight.vercel.app/",
+      "github": "https://github.com/hendrixejegi/bank-lp"
+    },
+    {
+      "name": "Browser Extension Manager UI",
+      "image": "/Macbook-Air-browser-extension-manager-ui-gray.vercel.app.webp",
+      "description": "A state-driven browser extension management interface built with vanilla HTML, CSS, and JavaScript, focusing on CRUD operations, UI state management, and theme toggling without the use of frameworks.",
+      "choices": [
+        {
+          "title": "Vanilla JavaScript State Management",
+          "description": "Implemented core CRUD operations (read, update, delete) using plain JavaScript, managing extension state changes and UI updates without relying on external libraries or frameworks."
+        },
+        {
+          "title": "Toggle-Based Enable/Disable Logic",
+          "description": "Integrated a toggle-based interaction to control extension activation state, ensuring UI feedback stays in sync with underlying data changes."
+        },
+        {
+          "title": "Theme Persistence",
+          "description": "Added light and dark theme support with persistent user preference handling to maintain a consistent experience across sessions."
+        }
+      ],
+      "live": "https://browser-extension-manager-ui-gray.vercel.app/",
+      "github": "https://github.com/hendrixejegi/browser-extension-manager-ui"
     }
   ]
 }

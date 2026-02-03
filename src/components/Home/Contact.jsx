@@ -24,7 +24,7 @@ const Contact = () => {
     <section className="p-4 md:p-8">
       <div
         id="contact-me-section"
-        className="relative rounded-2xl border-1 border-neutral-700/60 p-4 before:absolute before:inset-[0_0_0_0] before:-z-10 before:rounded-xl before:bg-[url(/67443.jpg)] before:bg-cover before:grayscale before:content-[''] lg:p-8"
+        className="relative rounded-2xl border-1 border-neutral-700/60 p-4 before:absolute before:inset-[0_0_0_0] before:-z-10 before:rounded-xl before:bg-[url(/67443.jpg)] before:bg-cover before:grayscale before:content-[''] focus-within:before:grayscale-0 lg:p-8"
       >
         <div className="flex w-full flex-col gap-8 lg:flex-row lg:items-center">
           <div className="basis-1/2">
